@@ -22,7 +22,7 @@ namespace dropit_usService.Models
         {
         } 
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+		public DbSet<Project> Projects { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

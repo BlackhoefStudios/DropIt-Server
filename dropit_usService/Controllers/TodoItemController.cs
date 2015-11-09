@@ -9,42 +9,43 @@ using dropit_usService.Models;
 
 namespace dropit_usService.Controllers
 {
-    public class TodoItemController : TableController<TodoItem>
+	[Authorize]
+	public class ProjectController : TableController<Project>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
             dropit_usContext context = new dropit_usContext();
-            DomainManager = new EntityDomainManager<TodoItem>(context, Request);
+			DomainManager = new EntityDomainManager<Project>(context, Request);
         }
 
-        // GET tables/TodoItem
-        public IQueryable<TodoItem> GetAllTodoItems()
+		// GET tables/Project
+		public IQueryable<Project> GetAllProjects()
         {
             return Query();
         }
 
-        // GET tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public SingleResult<TodoItem> GetTodoItem(string id)
+		// GET tables/Project/48D68C86-6EA6-4C25-AA33-223FC9A27959
+		public SingleResult<Project> GetProject(string id)
         {
             return Lookup(id);
         }
 
-        // PATCH tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task<TodoItem> PatchTodoItem(string id, Delta<TodoItem> patch)
+		// PATCH tables/Project/48D68C86-6EA6-4C25-AA33-223FC9A27959
+		public Task<Project> PatchProject(string id, Delta<Project> patch)
         {
             return UpdateAsync(id, patch);
         }
 
-        // POST tables/TodoItem
-        public async Task<IHttpActionResult> PostTodoItem(TodoItem item)
+		// POST tables/Project
+		public async Task<IHttpActionResult> PostProject(Project item)
         {
-            TodoItem current = await InsertAsync(item);
+			Project current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-        // DELETE tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task DeleteTodoItem(string id)
+		// DELETE tables/Project/48D68C86-6EA6-4C25-AA33-223FC9A27959
+		public Task DeleteProject(string id)
         {
             return DeleteAsync(id);
         }

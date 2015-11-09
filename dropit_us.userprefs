@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="dropit_usService/dropit_usService.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="dropit_usService/Controllers/TodoItemController.cs">
+    <Files>
+      <File FileName="dropit_usService/Controllers/TodoItemController.cs" Line="24" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

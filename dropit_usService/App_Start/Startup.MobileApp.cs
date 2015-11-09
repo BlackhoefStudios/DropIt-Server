@@ -37,15 +37,15 @@ namespace dropit_usService
     {
         protected override void Seed(dropit_usContext context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
+			List<Project> todoItems = new List<Project>
             {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
+				new Project { Id = Guid.NewGuid().ToString(), Name = "First item" },
+				new Project { Id = Guid.NewGuid().ToString(), Name = "Second item" },
             };
 
-            foreach (TodoItem todoItem in todoItems)
+			foreach (Project todoItem in todoItems)
             {
-                context.Set<TodoItem>().Add(todoItem);
+				context.Set<Project>().Add(todoItem);
             }
 
             base.Seed(context);
